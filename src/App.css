@@ -1,0 +1,39 @@
+body{
+  background: #9dc7c8;
+}
+
+.App {
+  text-align: center;
+}
+
+h1{
+  color: #748386;
+}
+
+input{
+  width: 50px;
+}
+
+button{
+  cursor: pointer;
+}
+
+.output{
+  font-weight: bold;
+  color: #748386;
+}
+
+.calculator-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.error-message{
+  color: #6A3937;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
