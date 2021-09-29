@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import InputBox from "./InputBox";
 
 const Calculator = () => {
 
@@ -7,6 +8,8 @@ const Calculator = () => {
   const [operator, setOperator] = useState('+')
   const [result, setResult] = useState('')
   const [errMsg, setErrMsg] = useState('')
+
+
 
   const calculate = (operator, x, y) => {
     x = Number(x)
@@ -32,16 +35,16 @@ const Calculator = () => {
   return (
     <>
       <div className="calculator-container">
-        <input type="text" onChange={event => setOperand1(event.target.value)} value={operand1} />
+        <InputBox value={operand1} setFunction={setOperand1} isDisabled={false} />
         <select name="operator" id="operator" value={operator} onChange={event => setOperator(event.target.value)}>
           <option value="+">+</option>
           <option value="-">-</option>
           <option value="*">*</option>
           <option value="/">/</option>
         </select>
-        <input type="text" onChange={event => { setOperand2(event.target.value) }} value={operand2} />
+        <InputBox value={operand2} setFunction={setOperand2} isDisabled={false} />
         <button className="equals" onClick={e => setResult(calculate(operator, operand1, operand2))}>=</button>
-        <div className="output">{result}</div>
+        <InputBox value={result} isDisabled={true} />
       </div>
       <div className="error-message">{errMsg}</div>
     </>
